@@ -192,6 +192,13 @@ BPCreatePageFrames(CGSize pageSize, CGSize *suggestedContentSizeOut, CFAttribute
       [view removeFromSuperview];
     }
     [_pageViews removeAllObjects];
+
+    // This forces the sizing of the content to be calculated after setting the
+    // markdown. I needed this for sizing in FPDetailSelfTextCell.
+    // TODO(sharkey): Merge any changes in this branch into a new proper fork of Bypass.
+    if (!_asynchronous) {
+      [self layoutSubviews];
+    }
 }
 
 /*
@@ -304,6 +311,7 @@ BPCreatePageFrames(CGSize pageSize, CGSize *suggestedContentSizeOut, CFAttribute
 
         [textView setTag:i + 1];
         [textView setAlpha:0.f];
+        [textView setBackgroundColor:[self backgroundColor]];
         
         [_pageViews addObject:textView];
         [self addSubview:textView];
