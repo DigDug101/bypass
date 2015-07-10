@@ -12,14 +12,14 @@ Pod::Spec.new do |s|
 
   s.platform     = :ios
 
-  s.source_files = 'dep/boost/**/*.{hpp}'
+  s.source_files = 'dep/boost/**/*.{hpp}',
                    'dep/libsoldout/markdown.{h,c}',
                    'dep/libsoldout/buffer.{h,c}',
                    'dep/libsoldout/array.{h,c}',
                    'src/*.{h,cpp}',
-                   'platform/ios/Bypass/Bypass/*.{h,m,mm,pch}',
+                   'platform/ios/Bypass/Bypass/*.{h,m,mm,pch}'
 
-  s.public_header_files = 'platform/ios/Bypass/*.h',
+  s.public_header_files = 'platform/ios/Bypass/*.h'
   s.header_mappings_dir = 'dep/boost'
 
   s.frameworks = "CoreText", "Foundation", "UIKit"
