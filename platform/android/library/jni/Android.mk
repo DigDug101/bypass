@@ -13,6 +13,6 @@ LOCAL_SRC_FILES := \
 	../../../../dep/libsoldout/buffer.c \
 	../../../../dep/libsoldout/array.c
 	
-LOCAL_C_INCLUDES:= ../../../dep/libsoldout ../../../src /opt/local/include /usr/local/include $(BYPASS_INCLUDE_PATH)
+LOCAL_C_INCLUDES:= ../../../dep/libsoldout ../../../src ../../../dep/boost /opt/local/include /usr/local/include $(BYPASS_INCLUDE_PATH)
 
 include $(BUILD_SHARED_LIBRARY)
